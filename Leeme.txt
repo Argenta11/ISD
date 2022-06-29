@@ -1,0 +1,100 @@
+//Debido a nuestros fallos en el Github, hemos estado desarrollando todo en conjunto, 
+//pero principalmente el reparto del trabajo fue equitativo.
+
+Clases de implementación de los DAOs:
+
+-Mario Casado Diez:
+	AbstractSqlExcursionDao.update
+	AbstractSqlExcursionDao.find
+	Jdbc3CcSqlReservationDao.create
+	AbstractSqlReservationDao.remove 
+	
+
+-Marta Martín de Argenta Hernández: 
+	AbstractSqlExcursionDao.findbydates
+	AbstractSqlReservationDao.find
+	AbstractSqlReservationDao.update
+	
+	
+-Marcos Fariña Balsa: 
+	Jdbc3CcSqlExcursionDao.create
+	AbstractSqlExcursionDao.remove
+	AbstractSqlReservationDao.existByExcursionId
+	AbstractSqlReservationDao.findByUserEmail
+
+
+
+Clases de implementación del servicio:
+
+-Mario Casado Diez:
+	AppService.createExcursion
+	AppService.removeExcursion
+	AppService.cancelReservation
+
+-Marta Martín de Argenta Hernández: 
+	AppService.updateExcursion
+	AppService.findExcursion
+	AppService.findReservation
+	
+-Marcos Fariña Balsa:
+	AppService.findExcursions
+	AppService.buyReservation
+	AppService.findReservations
+
+Clase de tests:
+
+-Mario Casado Diez: 
+	AppServiceTest.init
+	AppServiceTest.testAddExcursionAndFindExcursion
+	AppServiceTest.testUpdateExcursion
+	AppServiceTest.testUpdateNonExistentExcursion
+	AppServiceTest.testBuyExcursionAndFindReservation
+	AppServiceTest.testCanceledReservation
+	
+
+-Marta Martín de Argenta Hernández: 
+	AppServiceTest.init
+	AppServiceTest.testAddExcursionAndFindExcursionByCity
+	AppServiceTest.testFindNonExistentExcursion
+	AppServiceTest.testRemoveExcursion
+	AppServiceTest.testRemoveNonExistentExcursion
+	AppServiceTest.testFindNonExistentReservation
+
+-Marcos Fariña Balsa:
+	AppServiceTest.init
+	AppServiceTest.testAddInvalidExcursion
+	AppServiceTest.testUpdateInvalidExcursion
+	AppServiceTest.testRemoveExcursionWithReservations
+	AppServiceTest.testFindExcursions
+	AppServiceTest.testBuyExcursionWithInvalidCreditCard
+	AppServiceTest.testBuyNonExistentExcursion
+	AppServiceTest.testGetAllExcursions
+
+-Mario Casado Diez:
+    ExcursionServlet.processPost(funcionalidad 1)
+    ReservationServlet.processPost (else del if)(funcionalidad 5)
+    RestClientExcursionService.findExcursions (funcionalidad 3 cliente)
+    RestClientExcursionService.buyReservation (funcionalidad 4 cliente)
+    RestClientExcursionService.addExcursion & RestClientExcursionService.updateExcursion(Excepciones)
+
+
+-Marta Martín de Argenta Hernández:
+     ExcursionServlet.processGet(funcionalidad 3)
+     ReservationServlet.processPost (if inicial)(funcionalidad 4)
+     RestClientExcursionService.updateExcursion (funcionalidad 2 cliente)
+     RestClientExcursionService.cancelReservation (funcionalidad 5 cliente)
+     RestClientExcursionService.cancelReservation & RestClientExcursionService.findReservation (Excepcioness)
+
+-Marcos Fariña Balsa:
+    ExcursionServlet.processPut(funcionalidad 2)
+    ReservationServlet.processGet (funcionalidad 6)
+    RestClientExcursionService.addExcursion (funcionalidad 1 cliente)
+    RestClientExcursionService.findReservations (funcionalidad 6 cliente)
+    RestClientExcursionService.findExcursions & RestClientExcursionService.buyReservation (Excepciones)
+
+
+Apache Thrift:
+-------------
+  * Grupo 1: Funcionalidades 1 y 2 : Marcos Fariña Balsa
+  * Grupo 2: Funcionalidades 3 y 4 : Mario Casado Diez
+  * Grupo 3: Funcionalidades 5 y 6 : Marta Martín de Argenta Hernández
